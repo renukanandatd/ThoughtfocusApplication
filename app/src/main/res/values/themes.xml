@@ -7,7 +7,7 @@
 
     <style name="Theme.ThoughtfocusApplication" parent="Base.Theme.ThoughtfocusApplication" />
 
-    <style name="Theme.MainActivity" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MainActivity" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize attributes for the new theme here. -->
         <item name="colorPrimary">@color/green</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>

@@ -5,15 +5,29 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.thoughtfocusapplication.R
 import com.example.thoughtfocusapplication.databinding.ActivityMainBinding
+import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HistoryFragment
+import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.RefundFragment
+import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.SaleFragment
+import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.VoidFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     lateinit var toggle : ActionBarDrawerToggle
     lateinit var mainBinding: ActivityMainBinding
-    //private lateinit var drawerLayout: DrawerLayout
+    private lateinit var fragmentManager: FragmentManager
+
+    private lateinit var drawerLayout: DrawerLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         val view = mainBinding.root
         setContentView(view)
 
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+       drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+        //val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        //setSupportActionBar(toolbar)
 
         toggle = ActionBarDrawerToggle(this,mainBinding.drawerLayout,
             R.string.open_nav,
@@ -29,7 +48,8 @@ class MainActivity : AppCompatActivity() {
         mainBinding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener{
@@ -42,6 +62,24 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        val bottomNavView: BottomNavigationView = mainBinding.bottomNavigation
+
+        bottomNavView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_sale -> openFragment(SaleFragment())
+                R.id.nav_void -> openFragment(VoidFragment())
+                R.id.nav_refund ->  openFragment(RefundFragment())
+                R.id.history ->  openFragment(HistoryFragment())
+                R.id.nav_home ->  openFragment(HistoryFragment())
+            }
+            mainBinding.drawerLayout.closeDrawer(GravityCompat.START)
+            true
+        }
+
+        fragmentManager=supportFragmentManager
+
+        // Set the default selected item
+        bottomNavView.selectedItemId = R.id.nav_home
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -50,5 +88,9 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
+    private fun openFragment(fragment: Fragment) {
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container,fragment)
+        fragmentTransaction.commit()
+    }
 }

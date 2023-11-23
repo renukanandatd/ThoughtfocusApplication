@@ -12,24 +12,39 @@ import com.example.thoughtfocusapplication.userinterface.homescreen.MainActivity
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var viewModel : LoginViewModel
-
     lateinit var loginBinding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        loginBinding = ActivityLoginBinding.inflate(layoutInflater)
+        val view = loginBinding.root
+        setContentView(view)
 
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
-        viewModel.username.observe(this,{username->
-
-        })
-
-        viewModel.password.observe(this,{password->
-
-        })
+        // Observe changes in the authentication status
+        viewModel.isAuthenticated.observe(this) { isAuthenticated ->
+            if (isAuthenticated) {
+                val intent= Intent(this, MainActivity::class.java)
+                //intent.putExtra(Constants.USER_NAME,inputText.text.toString())
+                startActivity(intent)
+            } else {
+                Toast.makeText(this,"Enter your Username and password correctly", Toast.LENGTH_LONG).show()
+                println("Authentication failed!")
+            }
+        }
 
         loginBinding.buttonSignIn.setOnClickListener {
+            // Set the username and password in the ViewModel
+            viewModel.setUsername(loginBinding.mid.text.toString())
+            viewModel.setPassword(loginBinding.textPassword.text.toString())
+
+            // Trigger authentication
+            viewModel.authenticate()
+        }
+    }
+
+        /*loginBinding.buttonSignIn.setOnClickListener {
             if( loginBinding.mid.text?.isEmpty()!!){
                 Toast.makeText(this,"Enter your Merchant ID", Toast.LENGTH_LONG).show()
             }else if(loginBinding.textPassword.text?.isEmpty()!!){
@@ -42,6 +57,5 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
-        }
+        }*/
     }
-}

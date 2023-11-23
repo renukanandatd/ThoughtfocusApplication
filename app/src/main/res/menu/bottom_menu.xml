@@ -2,18 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/daily"
-        android:title="Daily"
-        android:icon="@drawable/daily"/>
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/home"/>
 
     <item
-        android:id="@+id/weekly"
-        android:title="Weekly"
-        android:icon="@drawable/week"/>
+        android:id="@+id/nav_sale"
+        android:title="Sale"
+        android:icon="@drawable/sale"/>
 
     <item
-        android:id="@+id/monthly"
-        android:title="Monthly"
+        android:id="@+id/nav_void"
+        android:title="Void"
+        android:icon="@drawable/voidtran"/>
+
+    <item
+        android:id="@+id/nav_refund"
+        android:title="Refund"
+        android:icon="@drawable/refund"/>
+
+    <item
+        android:id="@+id/history"
+        android:title="History"
         android:icon="@drawable/month"/>
 
 </menu>
