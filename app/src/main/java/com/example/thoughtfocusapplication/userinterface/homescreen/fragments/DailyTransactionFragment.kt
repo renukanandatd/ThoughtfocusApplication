@@ -11,24 +11,12 @@ import com.example.thoughtfocusapplication.userinterface.homescreen.viewmodel.Da
 
 class DailyTransactionFragment : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            DailyTransactionFragment()
-    }
-
-    private lateinit var viewModel: DailyTransactionViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_daily_transaction, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DailyTransactionViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }
