@@ -3,16 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/mainActivity">
-
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/dailyTransactionFragment"
-        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.DailyTransactionFragment"
-        android:label="fragment_daily_transaction"
-        tools:layout="@layout/fragment_daily_transaction" />
+        android:id="@+id/homeFragment"
+        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_saleFragment"
+            app:destination="@id/saleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_voidFragment"
+            app:destination="@id/voidFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_refundFragment"
+            app:destination="@id/refundFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saleFragment"
+        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.SaleFragment"
+        android:label="SaleFragment" >
+        <action
+            android:id="@+id/action_saleFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/voidFragment"
+        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.VoidFragment"
+        android:label="VoidFragment" >
+        <action
+            android:id="@+id/action_voidFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/refundFragment"
+        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.RefundFragment"
+        android:label="RefundFragment" >
+        <action
+            android:id="@+id/action_refundFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

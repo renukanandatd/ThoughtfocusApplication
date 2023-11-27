@@ -15,6 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.thoughtfocusapplication.R
 import com.example.thoughtfocusapplication.databinding.ActivityMainBinding
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HistoryFragment
+import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HomeFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.RefundFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.SaleFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.VoidFragment
@@ -96,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav_void -> openFragment(VoidFragment())
                     R.id.nav_refund -> openFragment(RefundFragment())
                     R.id.history -> openFragment(HistoryFragment())
-                    R.id.nav_home -> openFragment(SaleFragment())
+                    R.id.nav_home -> openFragment(HomeFragment())
                 }
                 mainBinding.drawerLayout.closeDrawer(GravityCompat.START)
                 true

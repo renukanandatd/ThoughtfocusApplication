@@ -7,26 +7,43 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.thoughtfocusapplication.R
+import com.example.thoughtfocusapplication.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
+    lateinit var viewModel: HomeViewModel
+    var homeBinding : FragmentHomeBinding? = null
 
-    companion object {
-        fun newInstance() = HomeFragment()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
+
+        val binding = FragmentHomeBinding.bind(view)
+        homeBinding = binding
+
+        binding.cardView1.setOnClickListener {
+            toggleVisibility(homeBinding!!.hiddenLayout1)
+        }
+
+        binding.cardView2
+            .setOnClickListener {
+            toggleVisibility(homeBinding!!.hiddenLayout2)
+        }
+
+        binding.cardView3.setOnClickListener {
+            toggleVisibility(homeBinding!!.hiddenLayout3)
+        }
+
+        binding.cardView4.setOnClickListener {
+            toggleVisibility(homeBinding!!.hiddenLayout4)
+        }
+
     }
 
-    private lateinit var viewModel: HomeViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    private fun toggleVisibility(view: View) {
+        if (view.visibility == View.VISIBLE) {
+            view.visibility = View.GONE
+        } else {
+            view.visibility = View.VISIBLE
+        }
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }

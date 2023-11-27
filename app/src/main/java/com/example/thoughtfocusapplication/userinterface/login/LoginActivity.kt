@@ -43,19 +43,4 @@ class LoginActivity : AppCompatActivity() {
             viewModel.authenticate()
         }
     }
-
-        /*loginBinding.buttonSignIn.setOnClickListener {
-            if( loginBinding.mid.text?.isEmpty()!!){
-                Toast.makeText(this,"Enter your Merchant ID", Toast.LENGTH_LONG).show()
-            }else if(loginBinding.textPassword.text?.isEmpty()!!){
-                Toast.makeText(this,"Enter your password", Toast.LENGTH_LONG).show()
-            }else if(loginBinding.textPassword.text?.length!! <10){
-                Toast.makeText(this,"Password should be of minimum length 10", Toast.LENGTH_LONG).show()
-            } else{
-                val intent= Intent(this, MainActivity::class.java)
-                //intent.putExtra(Constants.USER_NAME,inputText.text.toString())
-                startActivity(intent)
-
-            }
-        }*/
     }
