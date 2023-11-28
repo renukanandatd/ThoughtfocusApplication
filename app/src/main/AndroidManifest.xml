@@ -27,7 +27,7 @@
         <activity
             android:name=".userinterface.homescreen.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MainActivity">
+            android:theme="@style/Theme.ThoughtfocusApplication">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value=""/>

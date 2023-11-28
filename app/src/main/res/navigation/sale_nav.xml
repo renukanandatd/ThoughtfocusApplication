@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sale_nav"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/saleFragment2">
 
-    <fragment
-        android:id="@+id/homeFragment2"
-        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment2_to_saleFragment2"
-            app:destination="@id/saleFragment2" />
-    </fragment>
     <fragment
         android:id="@+id/saleFragment2"
         android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.SaleFragment"
         android:label="fragment_sale"
         tools:layout="@layout/fragment_sale" >
         <action
-            android:id="@+id/action_saleFragment2_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
+            android:id="@+id/action_saleFragment2_to_transactionSuccessfulFragment"
+            app:destination="@id/transactionSuccessfulFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionSuccessfulFragment"
+        android:name="com.example.thoughtfocusapplication.userinterface.homescreen.fragments.TransactionSuccessfulFragment"
+        android:label="fragment_transaction_successful"
+        tools:layout="@layout/fragment_transaction_successful" >
+        <action
+            android:id="@+id/action_transactionSuccessfulFragment_to_saleFragment2"
+            app:destination="@id/saleFragment2" />
     </fragment>
 </navigation>

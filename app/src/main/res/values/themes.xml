@@ -2,16 +2,15 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ThoughtfocusApplication" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
         <item name="colorPrimary">@color/green</item>
     </style>
 
     <style name="Theme.ThoughtfocusApplication" parent="Base.Theme.ThoughtfocusApplication" />
 
-    <style name="Theme.MainActivity" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize attributes for the new theme here. -->
-        <item name="colorPrimary">@color/green</item>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
-        <!-- Add more customizations for AnotherTheme -->
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
 </resources>
