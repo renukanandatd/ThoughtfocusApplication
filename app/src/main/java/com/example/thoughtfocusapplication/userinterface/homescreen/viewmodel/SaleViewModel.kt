@@ -5,4 +5,5 @@ import androidx.lifecycle.ViewModel
 
 class SaleViewModel : ViewModel() {
     val sharedData = MutableLiveData<String>()
+    var paymentType = String()
 }

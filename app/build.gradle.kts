@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +42,21 @@ android {
 }
 
 dependencies {
+
+    // Room components
+    implementation("androidx.room:room-runtime:2.6.0")
+    annotationProcessor("androidx.room:room-compiler:2.6.0.0")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.6.0")
+    implementation("androidx.activity:activity-ktx:1.8.1")
+
+    // optional - Test helpers
+    testImplementation("androidx.room:room-testing:2.6.0")
+
+    //KAPT ependencies
+    kapt("androidx.room:room-compiler:2.6.0")
+
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
