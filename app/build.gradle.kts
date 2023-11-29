@@ -45,7 +45,7 @@ dependencies {
 
     // Room components
     implementation("androidx.room:room-runtime:2.6.0")
-    annotationProcessor("androidx.room:room-compiler:2.6.0.0")
+    annotationProcessor("androidx.room:room-compiler:2.6.0")
 
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:2.6.0")

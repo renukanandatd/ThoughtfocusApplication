@@ -4,16 +4,20 @@ import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
-import androidx.fragment.app.FragmentManager
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.lifecycleScope
 import com.example.thoughtfocusapplication.R
-import com.example.thoughtfocusapplication.databinding.FragmentHomeBinding
 import com.example.thoughtfocusapplication.databinding.FragmentSaleBinding
+import com.example.thoughtfocusapplication.roomdb.TransactionApp
+import com.example.thoughtfocusapplication.roomdb.dao.TransactionDetailsDAO
+import com.example.thoughtfocusapplication.roomdb.entity.TransactionDetailsEntity
+import com.example.thoughtfocusapplication.userinterface.adapters.ItemAdapter
 import com.example.thoughtfocusapplication.userinterface.homescreen.viewmodel.SaleViewModel
+import kotlinx.coroutines.launch
 
 class SaleFragment : Fragment(R.layout.fragment_sale) {
 
@@ -28,10 +32,13 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
         val transaction = childFragmentManager.beginTransaction()
         val binding = FragmentSaleBinding.bind(view)
         salebinding = binding
+        val application = requireActivity().application
+        val transactionDetailsDAO = (application as TransactionApp).db.transactionDAO()
 
         salebinding.verifyButton.setOnClickListener {
             val dataToSend = salebinding.editTextNumber.text.toString()
             viewModel.sharedData.value = dataToSend
+            addRecord(transactionDetailsDAO)
             showAlertDialog()
         }
 
@@ -64,9 +71,9 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
         builder.setPositiveButton("OK") { dialog, _ ->
             // Handle selection here
             when {
-                radioButton1.isChecked -> navigateToFragment(TransactionSuccessfulFragment())
-                radioButton2.isChecked -> navigateToFragment(TransactionSuccessfulFragment())
-                radioButton3.isChecked -> navigateToFragment(TransactionSuccessfulFragment())
+                radioButton1.isChecked -> navigateToFragment(LoaderFragment())
+                radioButton2.isChecked -> navigateToFragment(LoaderFragment())
+                radioButton3.isChecked -> navigateToFragment(LoaderFragment())
             }
             dialog.dismiss()
         }
@@ -89,4 +96,16 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
         transaction.replace(R.id.fragment_container, fragment)
         transaction.addToBackStack(null) // Optional: Adds the transaction to the back stack
         transaction.commit()
-}}
+}
+
+    fun addRecord(transactionDetailsDAO: TransactionDetailsDAO){
+        val amount = salebinding.editTextNumber.text.toString() + "has been credited"
+
+        if(amount.isNotEmpty()){
+            lifecycleScope.launch {
+                transactionDetailsDAO.insert(TransactionDetailsEntity(amount = amount))
+                salebinding.editTextNumber.text.clear()
+            }
+        }
+    }
+}

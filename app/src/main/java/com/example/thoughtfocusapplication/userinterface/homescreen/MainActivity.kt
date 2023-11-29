@@ -14,7 +14,6 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
 import com.example.thoughtfocusapplication.R
 import com.example.thoughtfocusapplication.databinding.ActivityMainBinding
-import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HistoryFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HomeFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.RefundFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.SaleFragment
