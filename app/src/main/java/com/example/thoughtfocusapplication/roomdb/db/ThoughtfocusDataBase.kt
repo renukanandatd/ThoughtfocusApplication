@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.thoughtfocusapplication.roomdb.dao.TransactionDetailsDAO
 import com.example.thoughtfocusapplication.roomdb.entity.TransactionDetailsEntity
 
-@Database(entities = [TransactionDetailsEntity::class], version = 1)
+@Database(entities = [TransactionDetailsEntity::class], version = 2)
 abstract class ThoughtfocusDataBase:RoomDatabase() {
 
     abstract fun transactionDAO():TransactionDetailsDAO

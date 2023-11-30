@@ -16,8 +16,12 @@ class ItemAdapter(private val items: ArrayList<TransactionDetailsEntity>,
 
     class ViewHolder(binding: HistoryLayoutRecyclerViewBinding):RecyclerView.ViewHolder(binding.root){
         val history = binding.history
-        val amount = binding.tvAmt
-        val delete = binding.ivDelete
+        val types = binding.tvTypes
+        val type = binding.tvType
+        val amt = binding.tvAmt
+        val amount = binding.tvAmount
+        val dates = binding.tvDate
+        val date = binding.tvCurrentDate
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,7 +36,12 @@ class ItemAdapter(private val items: ArrayList<TransactionDetailsEntity>,
         val context = holder.itemView.context
         val items = items[position]
 
+        holder.types.text = "Type"
+        holder.type.text = items.type
+        holder.amt.text = "Amount"
         holder.amount.text = items.amount
+        holder.dates.text = "Date"
+        holder.date.text = items.date
 
         if(position%2==0){
             holder.history.setBackgroundColor(ContextCompat.getColor(holder.itemView.context,
@@ -41,9 +50,5 @@ class ItemAdapter(private val items: ArrayList<TransactionDetailsEntity>,
             holder.history.setBackgroundColor(ContextCompat.getColor(holder.itemView.context,
                 R.color.white))
         }
-
-      /*  holder.delete.setOnClickListener {
-            deleteListener.invoke(items.id)
-        }*/
     }
 }

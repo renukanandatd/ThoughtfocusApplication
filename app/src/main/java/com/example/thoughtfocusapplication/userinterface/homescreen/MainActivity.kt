@@ -17,6 +17,7 @@ import com.example.thoughtfocusapplication.databinding.ActivityMainBinding
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.HomeFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.RefundFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.SaleFragment
+import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.TransactionHistoryFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.VoidFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -95,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav_sale -> openFragment(SaleFragment())
                     R.id.nav_void -> openFragment(VoidFragment())
                     R.id.nav_refund -> openFragment(RefundFragment())
-                    R.id.history -> openFragment(HistoryFragment())
+                    R.id.history -> openFragment(TransactionHistoryFragment())
                     R.id.nav_home -> openFragment(HomeFragment())
                 }
                 mainBinding.drawerLayout.closeDrawer(GravityCompat.START)

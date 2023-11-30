@@ -5,15 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/history"
     android:gravity="center"
-    android:orientation="horizontal">
+    android:padding="20dp"
+    android:orientation="vertical">
+  <!--
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="image"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="center"
+        android:src="@drawable/delete" />-->
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/tvTypes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        tools:text="Name" />
+        tools:text="Type" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,21 +40,79 @@
         tools:text=":" />
 
     <TextView
+        android:id="@+id/tvType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="Type" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+
+    <TextView
         android:id="@+id/tvAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="Amount" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text=":" />
+
+    <TextView
+        android:id="@+id/tvAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         tools:text="Amount" />
+  </LinearLayout>
 
-    <ImageView
-        android:id="@+id/ivDelete"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:contentDescription="image"
-        android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:scaleType="center"
-        android:src="@drawable/delete" />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
 
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="Date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text=":" />
+
+    <TextView
+        android:id="@+id/tvCurrentDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="Date" />
+
+  </LinearLayout>
 </LinearLayout>
+

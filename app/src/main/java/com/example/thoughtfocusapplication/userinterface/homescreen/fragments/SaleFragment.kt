@@ -38,22 +38,9 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
         salebinding.verifyButton.setOnClickListener {
             val dataToSend = salebinding.editTextNumber.text.toString()
             viewModel.sharedData.value = dataToSend
-            addRecord(transactionDetailsDAO)
+            viewModel.addRecord(dataToSend,transactionDetailsDAO)
             showAlertDialog()
         }
-
-        /*binding.verifyButton.setOnClickListener {
-
-
-            // Replace the existing fragment with the new one
-            transaction.replace(R.id.fragmentContainer, HomeFragment())
-
-            // Add the transaction to the back stack (optional)
-            transaction.addToBackStack(null)
-
-            // Commit the transaction
-            transaction.commit()
-        }*/
     }
 
     private fun showAlertDialog() {
@@ -97,15 +84,4 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
         transaction.addToBackStack(null) // Optional: Adds the transaction to the back stack
         transaction.commit()
 }
-
-    fun addRecord(transactionDetailsDAO: TransactionDetailsDAO){
-        val amount = salebinding.editTextNumber.text.toString() + "has been credited"
-
-        if(amount.isNotEmpty()){
-            lifecycleScope.launch {
-                transactionDetailsDAO.insert(TransactionDetailsEntity(amount = amount))
-                salebinding.editTextNumber.text.clear()
-            }
-        }
-    }
 }
