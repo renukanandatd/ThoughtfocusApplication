@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/lightgreen"
+    android:background="@color/white"
     tools:context=".userinterface.homescreen.fragments.HomeFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView1"
         android:layout_width="150dp"
         android:layout_height="160dp"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        app:cardBackgroundColor="@color/lightgreen"
+        app:cardCornerRadius="8dp">
 
         <!-- Your main content goes here -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="85dp"
-            android:src="@drawable/daily"/>
+            android:src="@drawable/daily" />
 
         <TextView
             android:id="@+id/textMainContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="25dp"
+            android:gravity="center"
             android:padding="16dp"
             android:text="Daily"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -39,7 +41,7 @@
             android:id="@+id/hiddenLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
+            android:background="@color/lightgreen"
             android:orientation="vertical"
             android:visibility="gone">
 
@@ -51,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Sale"
-                android:textSize="14sp"  />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textHidnContent"
@@ -75,26 +77,27 @@
         android:id="@+id/cardView2"
         android:layout_width="150dp"
         android:layout_height="160dp"
-        android:layout_marginLeft="190dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="200dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        app:cardBackgroundColor="@color/lightgreen"
+        app:cardCornerRadius="8dp">
 
         <!-- Your main content goes here -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="85dp"
-            android:src="@drawable/week"/>
+            android:src="@drawable/week" />
 
         <TextView
             android:id="@+id/extMainContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="25dp"
             android:gravity="center"
             android:padding="16dp"
-            android:layout_marginTop="25dp"
             android:text="Weekly"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -104,7 +107,7 @@
             android:id="@+id/hiddenLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
+            android:background="@color/lightgreen"
             android:orientation="vertical"
             android:visibility="gone">
 
@@ -140,27 +143,28 @@
         android:id="@+id/cardView3"
         android:layout_width="150dp"
         android:layout_height="160dp"
-        app:cardCornerRadius="8dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="15dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        app:cardBackgroundColor="@color/lightgreen"
+        app:cardCornerRadius="8dp">
 
         <!-- Your main content goes here -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="85dp"
-            android:src="@drawable/month"/>
+            android:src="@drawable/month" />
 
         <TextView
             android:id="@+id/extainContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
             android:padding="16dp"
             android:text="Monthly"
-            android:layout_marginTop="25dp"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -169,7 +173,7 @@
             android:id="@+id/hiddenLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
+            android:background="@color/lightgreen"
             android:orientation="vertical"
             android:visibility="gone">
 
@@ -205,27 +209,28 @@
         android:id="@+id/cardView4"
         android:layout_width="150dp"
         android:layout_height="160dp"
-        app:cardCornerRadius="8dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="190dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="200dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        app:cardBackgroundColor="@color/lightgreen"
+        app:cardCornerRadius="8dp">
 
         <!-- Your main content goes here -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="85dp"
-            android:src="@drawable/sale"/>
+            android:src="@drawable/sale" />
 
         <TextView
             android:id="@+id/exnContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:layout_marginTop="25dp"
-            android:text="Total"
             android:layout_gravity="center"
+            android:layout_marginTop="25dp"
             android:gravity="center"
+            android:padding="16dp"
+            android:text="Total"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -234,7 +239,7 @@
             android:id="@+id/hiddenLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
+            android:background="@color/lightgreen"
             android:orientation="vertical"
             android:visibility="gone">
 

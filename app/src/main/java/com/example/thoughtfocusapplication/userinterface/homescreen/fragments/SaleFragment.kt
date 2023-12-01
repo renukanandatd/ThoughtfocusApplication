@@ -45,7 +45,7 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
 
     private fun showAlertDialog() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Select Pyment Type")
+        builder.setTitle("Select Payment Type")
 
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.alert_dialog, null)

@@ -1,4 +1,4 @@
-package com.example.thoughtfocusapplication.userinterface.homescreen.fragments
+package com.example.thoughtfocusapplication.userinterface.homescreen.viewmodel
 
 import androidx.lifecycle.ViewModel
 

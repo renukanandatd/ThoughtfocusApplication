@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.example.thoughtfocusapplication.R
 import com.example.thoughtfocusapplication.userinterface.homescreen.viewmodel.RefundViewModel
 
-class RefundFragment : Fragment() {
+class RefundFragment : Fragment(R.layout.fragment_refund) {
 
     companion object {
         fun newInstance() = RefundFragment()
