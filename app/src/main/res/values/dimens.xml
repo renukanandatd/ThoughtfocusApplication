@@ -2,11 +2,84 @@
 <resources>
 
     <!--Login page Dimensions-->
+    <dimen name="main_image_width">200dp</dimen>
+    <dimen name="main_image_height">50dp</dimen>
+    <dimen name="main_image_margin">10dp</dimen>
+    <dimen name="main_frame_layout_height">575dp</dimen>
+    <dimen name="main_frame_layout_margin">3dp</dimen>
+
+    <!--Login page Dimensions-->
     <dimen name="login_image_height">200dp</dimen>
     <dimen name="login_image_margin_top">80dp</dimen>
     <dimen name="login_linear_layout_margin_top">300dp</dimen>
     <dimen name="login_text_input_margin_top">30dp</dimen>
     <dimen name="login_text_input_height">65dp</dimen>
     <dimen name="login_textsize">22dp</dimen>
+
+    <!-- Splash Dimensions -->
+    <dimen name="splash_image_width">350dp</dimen>
+    <dimen name="splash_image_height">250dp</dimen>
+    <dimen name="splash_image_margin_start">55dp</dimen>
+    <dimen name="splash_image_margin_top">265dp</dimen>
+    <dimen name="splash_image_margin_end">56dp</dimen>
+    <dimen name="splash_image_margin_bottom">266dp</dimen>
+
+    <!-- Alert Dialog Dimensions -->
+    <dimen name="radio_group_top_margin">239dp</dimen>
+    <dimen name="radio_group_bottom_margin">348dp</dimen>
+
+    <!-- Home Fragment Dimensions -->
+    <!-- CardView Dimensions -->
+    <dimen name="card_width">150dp</dimen>
+    <dimen name="card_height">160dp</dimen>
+    <dimen name="card_margin_top">50dp</dimen>
+    <dimen name="card_margin_top_2">270dp</dimen>
+    <dimen name="card_margin_left">15dp</dimen>
+    <dimen name="card_margin_left_2">200dp</dimen>
+
+    <!-- Text and Image Dimensions -->
+    <dimen name="image_height">85dp</dimen>
+    <dimen name="text_margin_top">25dp</dimen>
+    <dimen name="text_padding">16dp</dimen>
+
+    <!-- HiddenLayout Dimensions -->
+    <dimen name="hidden_layout_top_margin">270dp</dimen>
+    <dimen name="hidden_layout_left_margin">200dp</dimen>
+
+    <!-- Loader Dimensions -->
+    <!-- TextView Dimensions -->
+    <dimen name="text_margin_start">79dp</dimen>
+    <dimen name="text_margin_top_2">152dp</dimen>
+    <dimen name="text_margin_end">80dp</dimen>
+    <dimen name="text_size">24sp</dimen>
+
+    <!-- ProgressBar Dimensions -->
+    <dimen name="progress_bar_size">120dp</dimen>
+    <dimen name="progress_bar_margin">16dp</dimen>
+    <dimen name="progress_bar_margin_top">31dp</dimen>
+    <dimen name="progress_bar_margin_bottom">331dp</dimen>
+
+    <!-- Refund Dimensions -->
+    <!-- EditText Dimensions -->
+    <dimen name="edit_text_width">225dp</dimen>
+
+    <!-- Margin Dimensions -->
+    <dimen name="layout_margin">20dp</dimen>
+    <dimen name="text_margin_end_2">30dp</dimen>
+    <dimen name="text_margin_start_2">107dp</dimen>
+    <dimen name="text_margin_end_start">5dp</dimen>
+
+    <!-- Text Dimensions -->
+    <dimen name="text_size_2">60dp</dimen>
+    <dimen name="text_size_3">16dp</dimen>
+
+    <!-- Button Dimensions -->
+    <dimen name="button_width">200dp</dimen>
+
+    <!--Nav header Dimens-->
+    <dimen name="nav_layout_height">300dp</dimen>
+    <dimen name="nav_width_height">100dp</dimen>
+    <dimen name="nav_text_size">20dp</dimen>
+    <dimen name="nav_padding">16dp</dimen>
 
 </resources>

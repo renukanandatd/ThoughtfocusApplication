@@ -19,15 +19,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_3"
         tools:text="Type" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:textSize="18sp"
+        android:layout_marginStart="@dimen/text_margin_end_start"
+        android:layout_marginEnd="@dimen/text_margin_end_start"
+        android:textSize="@dimen/text_size_3"
         android:textStyle="bold"
         tools:text=":" />
 
@@ -38,7 +38,7 @@
         android:layout_weight="1"
         android:gravity="right"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_3"
         tools:text="Type" />
 
   </LinearLayout>
@@ -53,15 +53,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_3"
         tools:text="Amount" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:textSize="18sp"
+        android:layout_marginStart="@dimen/text_margin_end_start"
+        android:layout_marginEnd="@dimen/text_margin_end_start"
+        android:textSize="@dimen/text_size_3"
         android:textStyle="bold"
         tools:text=":" />
 
@@ -72,7 +72,7 @@
         android:layout_weight="1"
         android:gravity="right"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_3"
         tools:text="Amount" />
   </LinearLayout>
 
@@ -86,15 +86,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_3"
         tools:text="Date" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:textSize="18sp"
+        android:layout_marginStart="@dimen/text_margin_end_start"
+        android:layout_marginEnd="@dimen/text_margin_end_start"
+        android:textSize="@dimen/text_size_3"
         android:textStyle="bold"
         tools:text=":" />
 
@@ -105,7 +105,7 @@
         android:layout_weight="1"
         android:gravity="right"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_3"
         tools:text="Date" />
 
   </LinearLayout>

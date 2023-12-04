@@ -9,12 +9,12 @@
 
     <ImageView
         android:id="@+id/splashImage"
-        android:layout_width="350dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="265dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="266dp"
+        android:layout_width="@dimen/splash_image_width"
+        android:layout_height="@dimen/splash_image_height"
+        android:layout_marginStart="@dimen/splash_image_margin_start"
+        android:layout_marginTop="@dimen/splash_image_margin_top"
+        android:layout_marginEnd="@dimen/splash_image_margin_end"
+        android:layout_marginBottom="@dimen/splash_image_margin_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

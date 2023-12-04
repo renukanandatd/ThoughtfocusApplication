@@ -14,14 +14,15 @@
 
         <EditText
             android:id="@+id/editTextNumber"
-            android:layout_width="225dp"
+            android:layout_width="@dimen/edit_text_width"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_marginEnd="@dimen/text_margin_end_2"
             android:background="@null"
-            android:paddingLeft="25dp"
             android:ems="10"
             android:hint="0.0"
             android:inputType="numberDecimal"
+            android:paddingLeft="@dimen/text_margin_top"
             android:textColorHint="@color/black"
             android:textSize="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,18 +35,18 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="107dp"
+            android:layout_marginStart="@dimen/text_margin_start_2"
             android:text="$"
-            android:textSize="60dp"
+            android:textSize="@dimen/text_size_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.324" />
+            app:layout_constraintVertical_bias="0.335" />
 
         <Button
             android:id="@+id/verifyButton"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="#04B30B"

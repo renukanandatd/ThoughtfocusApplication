@@ -18,10 +18,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/main_image_width"
+            android:layout_height="@dimen/main_image_height"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/main_image_margin"
             android:src="@drawable/thoughtfocuslogoremovebg"
             app:layout_constraintBottom_toTopOf="@+id/fragment_container"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,30 +32,21 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="575dp"
-            android:layout_marginTop="3dp"
+            android:layout_height="@dimen/main_frame_layout_height"
+            android:layout_marginTop="@dimen/main_frame_layout_margin"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-
-            <!--<androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragment"
-                android:name="androidx.navigation.fragment.NavHostFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:defaultNavHost="true"
-                app:navGraph="@navigation/sale_nav" />-->
         </FrameLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="@dimen/main_frame_layout_margin"
             android:background="@color/green"
             app:itemIconTint="@color/white"
             app:itemTextColor="@color/white"
