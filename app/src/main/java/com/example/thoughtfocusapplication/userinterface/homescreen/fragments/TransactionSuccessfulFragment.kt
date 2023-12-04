@@ -35,9 +35,25 @@ class TransactionSuccessfulFragment : Fragment(R.layout.fragment_transaction_suc
         sharedViewModel = ViewModelProvider(requireActivity()).get(SaleViewModel::class.java)
 
         // Observe changes in the shared data
-        sharedViewModel.sharedData.observe(viewLifecycleOwner, Observer {
+        successfulBinding.tvTypes.text = "Type"
+        successfulBinding.tvAmt.text = "Amount"
+        successfulBinding.tvDate.text = "Date"
+        successfulBinding.tvTimes .text= "Time"
+        sharedViewModel.transactionType.observe(viewLifecycleOwner, Observer {
+            val type = it
+            successfulBinding.tvType.text = type
+        })
+        sharedViewModel.amount.observe(viewLifecycleOwner, Observer {
             val amount = it
-            successfulBinding.textView2.text = "Congratulations! your amount of $"+amount+" is sucessfully is credited"
+            successfulBinding.tvAmount.text = amount
+        })
+        sharedViewModel.date.observe(viewLifecycleOwner, Observer {
+            val date = it
+            successfulBinding.tvCurrentDate.text = date
+        })
+        sharedViewModel.time.observe(viewLifecycleOwner, Observer {
+            val time = it
+            successfulBinding.tvTime.text = time
         })
     }
 }

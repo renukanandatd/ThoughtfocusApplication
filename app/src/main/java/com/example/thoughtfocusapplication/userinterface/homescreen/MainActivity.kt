@@ -1,11 +1,13 @@
 package com.example.thoughtfocusapplication.userinterface.homescreen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -19,6 +21,7 @@ import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.Re
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.SaleFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.TransactionHistoryFragment
 import com.example.thoughtfocusapplication.userinterface.homescreen.fragments.VoidFragment
+import com.example.thoughtfocusapplication.userinterface.login.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
@@ -108,24 +111,6 @@ class MainActivity : AppCompatActivity() {
             // Set the default selected item
             bottomNavView.selectedItemId = R.id.nav_home
 
-
-            /*mainBinding.cardView1.setOnClickListener {
-            // Toggle visibility of the hidden layout
-            toggleVisibility(mainBinding.hiddenLayout1)
-        }
-        mainBinding.cardView2.setOnClickListener {
-            // Toggle visibility of the hidden layout
-            toggleVisibility(mainBinding.hiddenLayout2)
-        }
-        mainBinding.cardView3.setOnClickListener {
-            // Toggle visibility of the hidden layout
-            toggleVisibility(mainBinding.hiddenLayout3)
-        }
-
-        mainBinding.cardView4.setOnClickListener {
-            // Toggle visibility of the hidden layout
-            toggleVisibility(mainBinding.hiddenLayout4)
-        }*/
         }
 
 
@@ -149,4 +134,26 @@ class MainActivity : AppCompatActivity() {
                 view.visibility = View.VISIBLE
             }
         }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        showLogoutConfirmationDialog()
+    }
+    private fun showLogoutConfirmationDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Logout")
+        builder.setMessage("Are you sure you want to logout?")
+        builder.setPositiveButton("Yes") { dialog, which ->
+            navigateToLoginPage()
+        }
+        builder.setNegativeButton("No") { dialog, which ->
+            Toast.makeText(this, "Logout canceled", Toast.LENGTH_SHORT).show()
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+    private fun navigateToLoginPage() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
     }

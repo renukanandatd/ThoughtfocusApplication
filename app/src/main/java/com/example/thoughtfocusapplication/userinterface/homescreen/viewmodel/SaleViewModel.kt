@@ -13,7 +13,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 class SaleViewModel : ViewModel() {
-    val sharedData = MutableLiveData<String>()
+    val amount = MutableLiveData<String>()
+    val transactionType = MutableLiveData<String>()
+    val  date= MutableLiveData<String>()
+    val  time= MutableLiveData<String>()
 
     fun addRecord(amount: String, transactionDetailsDAO: TransactionDetailsDAO) {
         if (amount.isNotEmpty()) {
@@ -24,9 +27,14 @@ class SaleViewModel : ViewModel() {
         }
     }
 
-    private fun getCurrentDate(): String {
+    fun getCurrentDate(): String {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd")
         return dateFormat.format(Date())
+    }
+
+    fun getCurrentTime(): String {
+        val timeFormat = SimpleDateFormat("HH:mm:ss")
+        return timeFormat.format(Date())
     }
 
 }

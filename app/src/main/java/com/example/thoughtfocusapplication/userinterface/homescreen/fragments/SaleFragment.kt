@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.lifecycleScope
 import com.example.thoughtfocusapplication.R
+import com.example.thoughtfocusapplication.databinding.ActivityMainBinding
 import com.example.thoughtfocusapplication.databinding.FragmentSaleBinding
 import com.example.thoughtfocusapplication.roomdb.TransactionApp
 import com.example.thoughtfocusapplication.roomdb.dao.TransactionDetailsDAO
@@ -37,7 +38,10 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
 
         salebinding.verifyButton.setOnClickListener {
             val dataToSend = salebinding.editTextNumber.text.toString()
-            viewModel.sharedData.value = dataToSend
+            viewModel.amount.value = dataToSend
+            viewModel.transactionType.value = "Sale"
+            viewModel.date.value = viewModel.getCurrentDate()
+            viewModel.time.value = viewModel.getCurrentTime()
             viewModel.addRecord(dataToSend,transactionDetailsDAO)
             showAlertDialog()
         }

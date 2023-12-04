@@ -7,15 +7,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupWindow
 import android.widget.ProgressBar
+import android.widget.VideoView
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.example.thoughtfocusapplication.R
 import com.example.thoughtfocusapplication.databinding.FragmentLoaderBinding
+import com.example.thoughtfocusapplication.userinterface.homescreen.viewmodel.LoaderViewModel
 
 class LoaderFragment : Fragment() {
     private var progressStatus = 0
     private val handler = Handler(Looper.getMainLooper())
-    private lateinit var binding: FragmentLoaderBinding // Replace with your actual binding class name
+    private lateinit var binding: FragmentLoaderBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,26 +36,21 @@ class LoaderFragment : Fragment() {
 
         Thread(Runnable {
             while (progressStatus < 100) {
-                // Update the progress status on the main thread
                 activity?.runOnUiThread {
                     progressBar.progress = progressStatus
                 }
 
                 try {
-
                     Thread.sleep(100)
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 }
-
-
                 progressStatus++
             }
 
-
             handler.postDelayed({
                 navigateToFragment(TransactionSuccessfulFragment())
-            }, 500) // Adjust the delay time as needed
+            }, 500)
         }).start()
     }
 
